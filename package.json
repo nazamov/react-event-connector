@@ -1,0 +1,39 @@
+{
+  "name": "react-event-connector",
+  "version": "1.0.0",
+  "description": "A library to connect react components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nazamov/react-event-connector.git"
+  },
+  "keywords": [
+    "react",
+    "react",
+    "event",
+    "react",
+    "connector"
+  ],
+  "author": "Nabi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nazamov/react-event-connector/issues"
+  },
+  "homepage": "https://github.com/nazamov/react-event-connector#readme",
+  "dependencies": {
+    "react": "^19.1.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@types/react": "^19.1.6",
+    "rollup": "^2.79.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^5.8.3"
+  }
+}
