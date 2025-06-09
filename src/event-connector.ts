@@ -1,3 +1,5 @@
+import { Subscriber } from "./model";
+
 export class EventConnector {
   private subscribers: Map<
     string,
@@ -11,10 +13,10 @@ export class EventConnector {
     return EventConnector.instance;
   }
 
-  subscribe<T>(signalName: string, id: string) {
+  subscribe<T>(signalName: string, id: string, subscriber: Subscriber<T>) {
     if (!this.subscribers.has(signalName)) this.subscribers.set(signalName, []);
 
-    return (subscriber: (value: T) => void) => {
+    return () => {
       const subscribers = this.subscribers.get(signalName);
       if (!subscribers) {
         console.error("Initializing error for signal: " + signalName);

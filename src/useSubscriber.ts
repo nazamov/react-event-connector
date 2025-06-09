@@ -1,7 +1,11 @@
+import { Subscriber } from "./model";
 import { useEffect, useId } from "react";
 import { EventConnector } from "./event-connector";
 
-export const useSubscriber = <T = any>(signalName: string) => {
+export const useSubscriber = <T = any>(
+  signalName: string,
+  subscriber: Subscriber<T>
+) => {
   const id = useId();
   const eventConnector = EventConnector.getInstance();
   const existingSubscriber = eventConnector.findSubscriber(signalName, id);
@@ -17,5 +21,5 @@ export const useSubscriber = <T = any>(signalName: string) => {
     return removeSubscriber;
   }, []);
 
-  return eventConnector.subscribe<T>(signalName, id);
+  return eventConnector.subscribe<T>(signalName, id, subscriber);
 };
