@@ -29,7 +29,7 @@ const { useEmitter, useSubscriber } = 'react-event-connector'
 
 // 2. Emit events from any component
 const Button = () => {
-  const emit = useEmitter();
+  const emit = useEmitter('click-event');
 
   return (
     <button onClick={() => emit('click', { timestamp: Date.now() })}>
@@ -40,7 +40,7 @@ const Button = () => {
 
 // 3. Subscribe anywhere in your app
 const Logger = () => {
-  useSubscriber('click', (data) => {
+  useSubscriber('click-event', (data) => {
     console.log('Button clicked!', data);
   });
 
