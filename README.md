@@ -32,7 +32,7 @@ const Button = () => {
   const emit = useEmitter('click-event');
 
   return (
-    <button onClick={() => emit('click', { timestamp: Date.now() })}>
+    <button onClick={() => emit({ timestamp: Date.now() })}>
       Click Me
     </button>
   );
