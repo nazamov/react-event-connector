@@ -18,6 +18,9 @@ export const useSubscriber = <T = any>(
 
   removeSubscriber();
   useEffect(() => {
+    if (!eventConnector.findSubscriber(signalName, id))
+      eventConnector.subscribe<T>(signalName, id, subscriber);
+
     return removeSubscriber;
   }, []);
 
