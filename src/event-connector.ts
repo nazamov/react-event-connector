@@ -15,16 +15,9 @@ export class EventConnector {
 
   subscribe<T>(signalName: string, id: string, subscriber: Subscriber<T>) {
     if (!this.subscribers.has(signalName)) this.subscribers.set(signalName, []);
+    const subscribers = this.subscribers.get(signalName);
 
-    return () => {
-      const subscribers = this.subscribers.get(signalName);
-      if (!subscribers) {
-        console.error("Initializing error for signal: " + signalName);
-        return;
-      }
-
-      subscribers.push({ subscriber, id });
-    };
+    subscribers!.push({ subscriber, id });
   }
 
   emit<T>(signalName: string) {

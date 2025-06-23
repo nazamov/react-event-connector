@@ -24,5 +24,5 @@ export const useSubscriber = <T = any>(
     return removeSubscriber;
   }, []);
 
-  return eventConnector.subscribe<T>(signalName, id, subscriber);
+  eventConnector.subscribe<T>(signalName, id, subscriber);
 };
